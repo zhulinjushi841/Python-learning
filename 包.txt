@@ -1,0 +1,26 @@
+02.包(Package)
+概念
+包 是一个 包含多个模块 的 特殊目录
+目录下有一个 特殊的文件 __init__.py
+包名的 命名方式 和变量名一致，小写字母+_
+
+好处
+使用 import 包名 可以一次性导入 包 中 所有的模块
+
+还可以在相应的目录下 右键新建 包Python_package 来建立新的Python Package
+
+案例演练
+1.新建一个hm_message 的包
+2.在目录下，新建两个文件 send_message 和 receive_message
+3.在send_message文件中定义一个 send 函数
+4.在 receive_message 文件中定义一个 receive 函数
+5.在外部直接导入 hm_message 的包
+
+__init__.py
+要在外界使用 包 中的模块，需要在__init__.py中指定 对外界提供的模块列表
+
+例如在此案例中：
+__init__.py的代码为：
+#从 当前目录 导入 模块列表
+from . import send_message
+from . import receive_message
