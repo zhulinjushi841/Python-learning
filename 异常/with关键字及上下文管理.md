@@ -2,7 +2,7 @@
  * @Author: Jerome 841682441@qq.com
  * @Date: 2022-11-03 17:52:46
  * @LastEditors: Jerome 841682441@qq.com
- * @LastEditTime: 2022-11-09 16:11:21
+ * @LastEditTime: 2022-11-09 16:14:02
  * @FilePath: \Python-learning\异常\with关键字及上下文管理.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -12,8 +12,8 @@ wth语句使得代码更加清晰，更具可读性，并简化了文件流等�
 
 在处理文件对象时，使用with关键字是一种很好的做法。
 对于系统资源比如文件、数据库连接、socket而言，应用程序打开这些资源并执行完业务逻辑之后，必须做的一件事就是关闭(断开)该资源。
-
 下面是几种正确关闭一个文件的方式:<br>
+<br>
 __1.普通版__
 
     def m1():
@@ -22,8 +22,8 @@ __1.普通版__
         f.close()
 
 这样写有一个潜在的问题，如果在调用write的过程中，出现了异常而导致后续代码无法继续执行，close方法就无法被正常调用，因此系统分配的资源就会一直被该程序占用而不会释放。
-
 为了改进代码，下面展示另一种打开方式:<br>
+<br>
 __2.进阶版__
 
     def m2():
@@ -69,7 +69,7 @@ with语句实质上式一个上下文管理器，with语句后的对象都会有
     with MyContext('zhangsan',18) as context:
         context.test()
 
-执行结果:
+执行结果:<br>
 ![pic1](../pics/屏幕截图%202022-11-08%20210231.png)
 
 
